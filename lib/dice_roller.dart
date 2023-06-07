@@ -10,12 +10,12 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var _currentDice = 'assets/images/dice-1.png';
+  var _currentDice = 1;
+  final _random = Random();
 
   void rollDice() {
-    final num = Random().nextInt(6) + 1;
     setState(() {
-      _currentDice = 'assets/images/dice-$num.png';
+      _currentDice = _random.nextInt(6) + 1;
     });
   }
 
@@ -27,7 +27,8 @@ class _DiceRollerState extends State<DiceRoller> {
         children: [
           GestureDetector(
             onTap: rollDice,
-            child: Image.asset(_currentDice, scale: 1.5),
+            child:
+                Image.asset('assets/images/dice-$_currentDice.png', scale: 2),
           ),
           OutlinedButton(
             onPressed: rollDice,
