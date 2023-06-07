@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:first_app/gradient_container.dart';
-import 'package:first_app/styled_text.dart';
+
+import 'dice_roller.dart';
 
 main() {
   runApp(const MyApp());
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'First Flutter App',
+      title: 'Dice Roll App',
       home: Scaffold(
         body: GradientContainer(
-          colors: [Colors.limeAccent, Colors.green],
-          child: StyledText('💙 Hello Flutter 💙💦'),
+          colors: [Colors.lime, Colors.green],
+          child: DiceRoller(),
         ),
       ),
     );
